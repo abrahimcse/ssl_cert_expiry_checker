@@ -52,12 +52,8 @@ sudo /usr/local/bin/ssl_cert_expiry_checker.sh
 ```
 
 ### Sample Output
-```bash
-🔐 SSL Certificate Expiry Alert (Threshold: 90 days)
 
-✅ [documents.crystaltechbd.com] is valid for 63 more days (until Sep 28 10:34:04 2025)
-⚠️ SSL certificate for [monitoring.crystaltechbd.com] expires in 14 days! (on Sep 12 08:39:40 2025)
-```
+![Output](https://github.com/abrahimcse/ssl_cert_expiry_checker/blob/main/alert.png)
 
 ### 4. Automate with Cron
 

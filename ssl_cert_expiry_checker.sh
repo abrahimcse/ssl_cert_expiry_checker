@@ -10,9 +10,9 @@ echo "" >> "$TMPFILE"
 while IFS='|' read -r CERT_NAME EXPIRY_DATE; do
 
   # Skip uptime.crystaltechbd.com notifications
-  if [[ "$CERT_NAME" == "uptime.crystaltechbd.com" ]]; then
-    continue
-  fi
+#  if [[ "$CERT_NAME" == "uptime.crystaltechbd.com" ]]; then
+#    continue
+#  fi
 
   EXPIRY_SECONDS=$(date -d "$EXPIRY_DATE" +%s)
   NOW_SECONDS=$(date +%s)
