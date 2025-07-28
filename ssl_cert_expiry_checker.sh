@@ -4,7 +4,7 @@ THRESHOLD=15
 TMPFILE="/tmp/ssl_expiry_alert.txt"
 ALERT=false
 
-echo "🔐 SSL Certificate Expiry Alert (Threshold: $THRESHOLD days)" > "$TMPFILE"
+echo "[Production] 🔐 SSL Certificate Expiry Alert (Threshold: $THRESHOLD days)" > "$TMPFILE"
 echo "" >> "$TMPFILE"
 
 while IFS='|' read -r CERT_NAME EXPIRY_DATE; do
@@ -34,6 +34,11 @@ done < <(certbot certificates | awk '
 ')
 
 if $ALERT; then
-  mail -s "[SSL Alert] Certificate(s) expiring in less than $THRESHOLD days" -r "abrahim.ctech@gmail.com" \
-  "abrahim.ctech@gmail.com" "amdadulbari@gmail.com" "moyeenuddinkhan@gmail.com" "mostafakhulna84@gmail.com" < "$TMPFILE"
+  {
+    echo "To: abrahimcse@gmail.com, abc@gmail.com, xyz@gmail.com"
+    echo "From: abrahim.ctech@gmail.com"
+    echo "Subject: [SSL Alert] Certificate(s) expiring in less than $THRESHOLD days"
+    echo ""
+    cat "$TMPFILE"
+  } | msmtp -a gmail -t
 fi

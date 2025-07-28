@@ -53,7 +53,7 @@ sudo /usr/local/bin/ssl_cert_expiry_checker.sh
 
 ### Sample Output
 
-![Output](https://github.com/abrahimcse/ssl_cert_expiry_checker/blob/main/alert.png)
+![Output](https://github.com/abrahimcse/ssl_cert_expiry_checker/blob/main/stg-server-alert.png)
 
 ### 4. Automate with Cron
 
