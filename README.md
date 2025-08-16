@@ -37,6 +37,7 @@ Save `ssl_cert_expiry_checker.sh` to `/usr/local/bin/ssl_cert_expiry_checker.sh`
 ```bash
 vim /usr/local/bin/ssl_cert_expiry_checker.sh
 sudo chmod +x /usr/local/bin/ssl_cert_expiry_checker.sh
+sudo ln -sf /usr/bin/msmtp /usr/sbin/sendmail
 ```
 
 ### 3. Testing
